@@ -14,9 +14,9 @@ from functions.video_utils import save_vid
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description='Segmentation Main')
-    parser.add_argument('--img_path', type=str, help='Path to input image folder', default='FlowFormerPlusPlus-main/datasets/Sintel/test/personal')
-    parser.add_argument('--flow_path', type=str, help='Path to optical flow folder', default='FlowFormerPlusPlus-main/sintel_submission_multi8_768/personal')
-    parser.add_argument('--vid_name', type=str, help='Name of the test video folder', default='test1')
+    parser.add_argument('--img_path', type=str, help='Path to input image folder', default='FlowFormerPlusPlus-main/datasets/Sintel/test')
+    parser.add_argument('--flow_path', type=str, help='Path to optical flow folder', default='FlowFormerPlusPlus-main/sintel_submission_multi8_768')
+    parser.add_argument('--vid_name', type=str, help='Name of the test video folder', default='test_video')
     parser.add_argument('--model', type=str, help='Path to the model', default='inputs/yolov8n-seg.pt')
 
     args = parser.parse_args()
