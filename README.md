@@ -17,7 +17,7 @@ Store an example video file in the videos folder (preferably landscape) or use `
     ├──test_video.mp4
 ```
 
-Run the `video_to_images.py` file to save the video as frames in `FlowFormerPlusPlus-main\datasets\Sintel\test`.
+Run the `video_to_images.py` file to save the video as frames in `FlowFormerPlusPlus-main\datasets\Sintel\test`. Save any more frame that you want to test the alhorithm on in a new folder in the `FlowFormerPlusPlus-main\datasets\Sintel\test\personal` directory
 
 ```shell
 python video_to_images.py
