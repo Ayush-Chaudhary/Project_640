@@ -17,7 +17,6 @@ if __name__ == "__main__":
     parser.add_argument('--img_path', type=str, help='Path to input image folder', default='FlowFormerPlusPlus-main/datasets/Sintel/test')
     parser.add_argument('--flow_path', type=str, help='Path to optical flow folder', default='FlowFormerPlusPlus-main/sintel_submission_multi8_768')
     parser.add_argument('--vid_name', type=str, help='Name of the test video folder', default='test_video')
-    parser.add_argument('--model', type=str, help='Path to the model', default='inputs/yolov8n-seg.pt')
 
     args = parser.parse_args()
 
@@ -34,7 +33,7 @@ if __name__ == "__main__":
     yolo_model, yolo_processor = get_yolo()        
 
     # Get the average flow vectors for the detected bounding boxes
-    flow_boxes, masks, flows = get_avg_flow(flow_path, img_path, yolo_model, yolo_processor)
+    flow_boxes, masks, flows, union = get_avg_flow(flow_path, img_path, yolo_model, yolo_processor)
 
     # Draw the flow vectors on the images
     color_images, info = draw_flow_vectors(flow_boxes, img_path)

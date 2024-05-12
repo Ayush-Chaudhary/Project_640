@@ -3,7 +3,7 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 from functions.detection_utils import get_boxes_detection, get_segmentation
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 
 def draw_arrow(draw, x_start, y_start, x_end, y_end, head_width=10, head_length=10, fill="black", width=1):
     """
@@ -62,7 +62,7 @@ def draw_flow_vectors(flow_boxes, img_path):
                 if magnitude > 0.8:
                     draw_arrow(draw, x, y, x + int(u*20), y + int(v*20), head_width=15, head_length=15, fill='red', width=8)
                     formatted_w = f'{magnitude:.2f}'
-                    draw.text((x, y), f'{formatted_w}', fill='red')
+                    draw.text((x, y), f'{formatted_w}', fill='red', font=ImageFont.truetype("arial.ttf", 20))
                     temp_info.append([item[0], item[2]])
         # convert to cv2 format
         info.append(temp_info)
