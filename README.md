@@ -1,6 +1,6 @@
 # 2D Motion Analysis in Videos using Optical Flow Techniques
 
-The file contains instructions to run the code.
+This file contains instructions to run the code.
 
 ## Models
 Download the pretrained FlowFormer++ [model](https://drive.google.com/drive/folders/1fyPZvcH4SuNCgnBvIJB2PktT5IN9PYPI?usp=sharing). The default path of the model for evaluation is:
@@ -11,13 +11,13 @@ Download the pretrained FlowFormer++ [model](https://drive.google.com/drive/fold
 
 ## Evaluation
 
-Store an example video file in the videos folder (preferably landscape) or use `test_video.avi`.
+Store an example video file in the videos folder (preferably landscape) or use `test_video.mp4`.
 ```shell
-|--videos
-    |--test_video.mp4
+├──videos
+    ├──test_video.mp4
 ```
 
-Run the `video_to_images.py` file to save the video as frames in `FlowFormerPlusPlus-main\datasets\Sintel\test\custom`.
+Run the `video_to_images.py` file to save the video as frames in `FlowFormerPlusPlus-main\datasets\Sintel\test`.
 
 ```shell
 python video_to_images.py
@@ -31,8 +31,10 @@ python evaluate_FlowFormerPlusPlus_tile.py --model ./checkpoints/sintel.pth --ev
 cd ..
 ```
 
-Run the `motion_prediction_main.py` to get the annotated videos after running YOLOv8 and postprocessing functions
+Run the `segmentation_main.py` to get the annotated videos after running YOLOv8 and postprocessing functions
 
 ```shell
-python motion_prediction_main.py
+python segmentation_main.py
 ```
+
+Go through the [results](https://drive.google.com/drive/folders/1dXfLus2LjWmG3Mal3VqVbY2NNGlVuBEm?usp=sharing) on a few more test videos.
